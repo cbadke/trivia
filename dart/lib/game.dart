@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'dart:collection';
 
 class Game {
@@ -141,29 +140,5 @@ class Game {
 
   bool _did_player_win() {
     return !(_purses[_current_player] == 6);
-  }
-}
-
-void main() {
-  bool not_a_winner = true;
-  var game = new Game();
-  Random rand = new Random();
-
-  game.add('Chet');
-  game.add('Pat');
-  game.add('Sue');
-
-  print("There are ${game.how_many_players} players");
-
-  while(not_a_winner) {
-    game.roll(rand.nextInt(5) + 1);
-
-    if (rand.nextInt(9) == 7) {
-      print("Wrong answer");
-      not_a_winner = game.wrong_answer();
-    } else {
-      print("Right answer");
-      not_a_winner = game.was_correctly_answered();
-    }
   }
 }
