@@ -115,7 +115,7 @@ class Game {
         return true;
       }
     } else {
-      print("Answer was correct!!!!");
+      print("Answer was corrent!!!!");
       _purses[_current_player] += 1;
       print("${_players[_current_player]} now has ${_purses[_current_player]} Gold Coins.");
 
