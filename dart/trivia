@@ -3,7 +3,7 @@ import 'dart:math';
 import "lib/game.dart";
 
 void main() {
-  bool not_a_winner = true;
+  bool not_a_winner = false;
   var game = new Game();
   Random rand = new Random();
 
@@ -13,7 +13,7 @@ void main() {
 
   print("There are ${game.how_many_players} players");
 
-  while(not_a_winner) {
+  do {
     game.roll(rand.nextInt(5) + 1);
 
     if (rand.nextInt(9) == 7) {
@@ -23,5 +23,5 @@ void main() {
       print("Right answer");
       not_a_winner = game.was_correctly_answered();
     }
-  }
+  } while(not_a_winner);
 }
