@@ -9,18 +9,21 @@ namespace Trivia
 {
     public class GameRunner
     {
-
         private static bool notAWinner;
 
         public static void Main(String[] args)
         {
+            if (args.Length < 1) return;
+
+            var seed = Convert.ToInt32(args[0]);
+
             Game aGame = new Game();
 
             aGame.add("Chet");
             aGame.add("Pat");
             aGame.add("Sue");
 
-            Random rand = new Random();
+            Random rand = new Random(seed);
 
             do
             {
